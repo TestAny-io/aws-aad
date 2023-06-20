@@ -25,6 +25,7 @@ pipeline {
         sh 'env'
         sh 'pwd'
         sh 'ls -lah'
+        sh 'go version'
       }
     }
     stage('Fetch dependencies') {
