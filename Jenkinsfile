@@ -40,10 +40,8 @@ pipeline {
     }
     stage('Build') {
       steps {
-        echo 'Building..'
         sh 'make all'
-        archiveArtifacts artifacts: '**/dist/*'
-        fingerprint: true
+        archiveArtifacts artifacts: '**/dist/*', onlyIfSuccessful: true, fingerprint: true
       }
     }
     stage('Test') {
