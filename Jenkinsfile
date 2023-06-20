@@ -18,7 +18,7 @@ pipeline {
   }
 
   stages {
-    staget('Environments') {
+    stage('Environments') {
       description 'fetch environments information'
       steps {
         sh 'cat /etc/os-release'
