@@ -19,7 +19,6 @@ pipeline {
 
   stages {
     stage('Environments') {
-      description 'fetch environments information'
       steps {
         sh 'cat /etc/os-release'
         sh 'uname -a'
@@ -29,13 +28,11 @@ pipeline {
       }
     }
     stage('Fetch dependencies') {
-      description 'download dependencies for the project'
       steps {
         sh 'go mod download'
       }
     }
     stage('Unit Test') {
-      description 'complete unit test for existing branch'
       steps {
         sh 'make test'
       }
